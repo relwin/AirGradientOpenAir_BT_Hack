@@ -1,5 +1,5 @@
 # AirGradientOpenAir_BT_Hack
-Add BlueTooth logging to AirGradient Open Air O-1PST, use nRF connect on Android phone to capture logfiles. Then use a python script to convert to CSV.
+Add BlueTooth logging to AirGradient Open Air O-1PST, use nRF connect on Android phone to capture a logfile. Then use a python script to convert the logfile to CSV.
 For mobile logging, a phone runs a GPS logger while capturing BT logging, and after a data run a python script combines both data sets into a single time-synchronized CSV file.
 
 Building Arduino Firmware:
@@ -20,7 +20,7 @@ BT data logging:
 7) To stop logging, hit DISCONNECT.
 8) Select disc icon to save logging to TXT file. For example: \LG Escape Plus\Internal storage\Download\Log 2026-05-08 15_37_44.txt
 
-Converting BT logfile to CSV. The Log file contains O-1PST sensor data, but it's in ASCII-Hex format. Use a python script to convert to CSV:
+Converting BT logfile to CSV. The Log file contains O-1PST sensor data, but it's in ASCII-Hex format mixed in with all the other BT info. Use a python script to convert to CSV:
 1) run agparse_nRF.py  (python 3.8 or newer.) It uses tkinter for a simple UI file picker.
 2) a CSV file is created. However, I no longer use this utility as this data needs to be merged with GPS data for useful mobile data run.
 
