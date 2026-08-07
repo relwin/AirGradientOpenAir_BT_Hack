@@ -19,6 +19,7 @@ For mobile logging, a phone runs a GPS logger while capturing BT logging, and af
 6) Logging now captures notify messages. (swipe right to show)
 7) To stop logging, hit DISCONNECT.
 8) Select disc icon to save logging to TXT file. For example: \LG Escape Plus\Internal storage\Download\Log 2026-05-08 15_37_44.txt
+9) Once working, use nRF's "Macro Record" feature to record steps 4~5 and save as a macro. Then once connected, run the macro.
 
 **Converting BT logfile to CSV.** 
 The Log file contains O-1PST sensor data, but it's in ASCII-Hex format mixed in with all the other BT info. Use a python script to convert to CSV:
