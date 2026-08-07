@@ -10,7 +10,7 @@ For mobile logging, a phone runs a GPS logger while capturing BT logging, and af
 5) build OneOpenAir_bt.ino and flash.
 6) Verify O-1PST is working properly with modified code (look at serial debug.)
 
-BT data logging:
+**BT data logging:**
 1) use Nordic's nRF Connect for Mobile, and possibly nRF logger. I'm using an old Android v9 phone.
 2) Connect to "AirG-Server". if connected properly under CLIENT section will be Unknown Service UUID:0xCAFE, among other things.
 3) Select the 3 vertical dots to show client actions.
@@ -20,10 +20,23 @@ BT data logging:
 7) To stop logging, hit DISCONNECT.
 8) Select disc icon to save logging to TXT file. For example: \LG Escape Plus\Internal storage\Download\Log 2026-05-08 15_37_44.txt
 
-Converting BT logfile to CSV. The Log file contains O-1PST sensor data, but it's in ASCII-Hex format mixed in with all the other BT info. Use a python script to convert to CSV:
+**Converting BT logfile to CSV.** 
+The Log file contains O-1PST sensor data, but it's in ASCII-Hex format mixed in with all the other BT info. Use a python script to convert to CSV:
 1) run agparse_nRF.py  (python 3.8 or newer.) It uses tkinter for a simple UI file picker.
 2) a CSV file is created. However, I no longer use this utility as this data needs to be merged with GPS data for useful mobile data run.
 
+**Mobile GPS Logging, Android setup example.**
+1) Install termux, https://termux.dev/en/
+2) Install python (if not installed by termux.) https://wiki.termux.com/wiki/Python
+3) for USB file sharing you may need to specify a shared folder on the phone. On mine I use ~/storage/downloads, which appears as "This PC\LG Escape Plus\Internal storage\Download" on a Windows PC.
+4) copy gpslogger.py to the phone's shared folder.
+5) copy the shell script gpsrun.sh to the termux home directory. Or use edit to create (only 3 lines.)
+6) in termux command window, execute gpsrun.sh. This starts GPS logging. ^C stops logging. The logfiles are created in the shared folder.
 
+**Merging O-1PST nRF logfile with GPS logfile**
+1) on a PC, copy the logfiles locally, typically "gpslog_xxx.csv" and "Log_xxx.txt".
+2) run the python script aglogmerge.py, the basic UI presents the appropriate log files to select.
+3) the result "merge_xxx.csv" combines the GPS and the O-1PST sensor data into timestamped samples.
 
-
+**Visualizing the data run**
+1) an exercise left to the user...
