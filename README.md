@@ -2,7 +2,7 @@
 Add BlueTooth logging to AirGradient Open Air O-1PST, use nRF connect on Android phone to capture a logfile. Then use a python script to convert the logfile to CSV.
 For mobile logging, a phone runs a GPS logger while capturing BT logging, and after a data run a python script combines both data sets into a single time-synchronized CSV file.
 
-Building Arduino Firmware:
+**Building Arduino Firmware:**
 1) create the Arduino build environment by following instructions https://www.airgradient.com/documentation/kb/kb-diy-the-airgradient-builds-overview/
 2) verify by building and flashing the O-1PST.
 3) create a new folder /examples/OneOpenAir_bt and copy this repository's files. OneOpenAir_bt.ino is modified, my_ble.cpp is new but based on NimBLE_Server.ino demo code.
