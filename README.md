@@ -41,3 +41,6 @@ The Log file contains O-1PST sensor data, but it's in ASCII-Hex format mixed in 
 
 **Visualizing the data run**
 1) an exercise left to the user...
+
+**License **
+No license implied, unless from modified code. In which case whatever license that code is...
